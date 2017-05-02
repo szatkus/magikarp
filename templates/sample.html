@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <title>Sample</title>
 <meta charset="utf-8">
-<script src="/static/vue.js"></script>
+<script src="/static/lib/vue.js"></script>
+<script src="/static/js/sample.js"></script>
 <div id="sample">
-  {{ text }}
+   <p>tu{{ message }}tu</p>
 </div>
+
+<div id="hello-world-app">
+      <h1>{{ msg }}</h1>
+    </div>
+
+    <script>
+          new Vue({
+            el: "#hello-world-app",
+            data() {
+              return {
+                msg: "Hello World!"
+              }
+            }
+          });
+        </script>
