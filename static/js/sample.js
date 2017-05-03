@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
   var sample = new Vue({
     el: '#sample',
     data: {
-      text: 'Loading...'
+      text: 'loading'
     },
     created: function () {
       setTimeout(function () {
