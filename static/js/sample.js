@@ -1,8 +1,22 @@
 window.addEventListener('load', function () {
-  window.sample = new Vue({
+  var sample = new Vue({
     el: '#sample',
     data: {
-      message: 'Loading...'
+      text: 'Loading...'
+    },
+    created: function () {
+      setTimeout(function () {
+        sample.fetchData();
+      }, 2000);
+    },
+    methods: {
+      fetchData: function () {
+        fetch('/sample').then(function (response) {
+          response.json().then(function (data) {
+            sample.text = data.text;
+          });
+        });
+      }
     }
   });
 });

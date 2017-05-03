@@ -1,9 +1,12 @@
 from flask import Flask, render_template
-app = Flask(__name__)
+import json
+from application import application
+import sample
 
-@app.route('/')
-def sample():
+
+@application.route('/')
+def root():
     return render_template('sample.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)

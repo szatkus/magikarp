@@ -3,21 +3,8 @@
 <meta charset="utf-8">
 <script src="/static/lib/vue.js"></script>
 <script src="/static/js/sample.js"></script>
+{% raw %}
 <div id="sample">
-   <p>tu{{ message }}tu</p>
+   <p>{{ text }}</p>
 </div>
-
-<div id="hello-world-app">
-      <h1>{{ msg }}</h1>
-    </div>
-
-    <script>
-          new Vue({
-            el: "#hello-world-app",
-            data() {
-              return {
-                msg: "Hello World!"
-              }
-            }
-          });
-        </script>
+{% endraw %}
