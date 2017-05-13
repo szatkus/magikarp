@@ -1,1 +1,1 @@
-DATABASE_URI = 'postgresql://dev:dev@localhost:5432/magikarp'
+DATABASE_URI = 'sqlite:///magikarp.db'
