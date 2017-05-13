@@ -1,0 +1,19 @@
+html
+{
+	font-family: Calibri
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+	display: flex;
+	justify-content: center;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+table , td {
+	 border: 0px solid black;
+	 padding: 2.25pt 2.25pt 2.25pt 2.25pt;
+	 text-align: left;
+}

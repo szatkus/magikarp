@@ -1,0 +1,26 @@
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="user.css"/>
+	</head>
+
+	<body>
+		<script src="user.js"/></script>
+		<div class="center" id="login_form"></div>
+		
+		<script>
+			var loginForm = getInputForm( {
+				sendText: "Zaloguj",
+				actionPage: "login.html",
+				fields: {
+					login: {prompt: "Login:"},
+					password: {prompt: "Hasło:",isPassword: true}
+				}
+			} );
+		
+			document.getElementById("login_form").appendChild(loginForm);
+		</script>
+		
+	</body>
+
+</html>
