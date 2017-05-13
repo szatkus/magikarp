@@ -1,3 +1,8 @@
+var imported = document.createElement("script");
+imported.src = "/static/js/hash.js";
+document.body.appendChild(imported);
+
+
 function getInputForm(obj){
 	
 	var fields = obj.fields;
@@ -6,6 +11,8 @@ function getInputForm(obj){
 	{
 		htmlForm.setAttribute("action",obj.actionPage);
 		htmlForm.setAttribute("method","post");
+		htmlForm.id=obj.id;
+		htmlForm.setAttribute("onsubmit", "hashPasswords(this);");
 		
 		/* Tworzę tabele */
 		var htmlTable = document.createElement("table");
@@ -22,11 +29,13 @@ function getInputForm(obj){
 				}
 				
 				var htmlInputCell = document.createElement("td");
-				var htmlInput = document.createElement("input");
-				htmlInput.id=row;
-				htmlInput.name=row;
-				htmlInput.type = fields[row].isPassword ? "password" : "text";
-				htmlInputCell.appendChild(htmlInput);
+				{
+					var htmlInput = document.createElement("input");
+					htmlInput.id=row;
+					htmlInput.name=row;
+					htmlInput.type = fields[row].isPassword ? "password" : "text";
+					htmlInputCell.appendChild(htmlInput);
+				}
 				htmlRow.appendChild(htmlInputCell);
 			}
 			htmlTable.appendChild(htmlRow)
@@ -53,4 +62,15 @@ function getInputForm(obj){
 	
 	
 	return htmlForm;
+};
+
+function hashPasswords(form){
+	var passInputs = document.querySelectorAll('[type=password]');
+	for (var i = 0 ; i<passInputs.length ; i++){
+		var input = passInputs[i];
+		if (form.contains(input)){
+			input.value=md5(input.value);
+			console.log(input.value);
+		}
+	}
 };

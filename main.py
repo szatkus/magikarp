@@ -2,6 +2,9 @@ from flask import Flask, render_template
 import json
 from application import application
 import sample
+import login
+import register
+import registration
 
 
 @application.route('/')

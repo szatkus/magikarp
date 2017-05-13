@@ -1,17 +1,18 @@
 <html>
 
 	<head>
-		<link rel="stylesheet" type="text/css" href="user.css"/>
+		<link rel="stylesheet" type="text/css" href="/static/css/user.css"/>
 	</head>
 
 	<body>
-		<script src="user.js"/></script>
+		<script src="/static/js/user.js"/></script>
 		<div class="center" id="login_form"></div>
 		
 		<script>
 			var loginForm = getInputForm( {
 				sendText: "Zaloguj",
-				actionPage: "login.html",
+				id: "loginForm",
+				actionPage: "login",
 				fields: {
 					login: {prompt: "Login:"},
 					password: {prompt: "Hasło:",isPassword: true}

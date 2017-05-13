@@ -1,21 +1,22 @@
 <html>
 
 	<head>
-		<link rel="stylesheet" type="text/css" href="user.css"/>
+		<link rel="stylesheet" type="text/css" href="static/css/user.css"/>
 	</head>
 
 	<body>
-		<script src="user.js"/></script>
+		<script src="/static/js/user.js"/></script>
 		<div class="center" id="login_form"></div>
 		
 		<script>
 			var loginForm = getInputForm( {
 				sendText: "Zarejestruj",
-				actionPage: "login.html",
+				id: "registerForm",
+				actionPage: "registration",
 				fields: {
 					login: {prompt: "Login:"},
-					password: {prompt: "Has≥o:",isPassword: true},
-					verify_password: {prompt: "Potwierdü has≥o:",isPassword: true},
+					password: {prompt: "Has≈Ço:",isPassword: true},
+					verify_password: {prompt: "Potwierd≈∫ has≈Ço:",isPassword: true},
 					email: {prompt: "E-mail:"}
 				}
 			} );
