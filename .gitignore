@@ -1,2 +1,6 @@
 venv/
 config.py
+database.db
+.hg/
+.hgignore
+__pycache__
