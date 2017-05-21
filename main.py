@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import json
 from application import application
 import sample
-
+import folders
 
 @application.route('/')
 def root():

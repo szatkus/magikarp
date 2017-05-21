@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="/static/css/folders_styles.css">
+<title>Widok folderow</title>
+<meta charset="utf-8">
+<script src="/static/lib/vue.js"></script>
+<script src="/static/js/folders.js"></script>
+</head>
+<body>
+{% raw %}
+<div class="container">
+<div id="folders">
+<section class="panel">
+   <H1 v-on:click="reset_current_folder">Katalog główny</H1>
+         <input type="text" placeholder="Podaj nazwę nowego folderu" autofocus class="text-input" v-model="newFolder" v-on:keyup.enter="add_folder">
+      <button v-on:click="add_folder" class="add">+</button>
+   </section>
+   <div v-if="fetched">
+   <ul class="list">
+   <template v-for="element in data_in_json[-1]">
+      <li id="folders_css" v-if="element.description" v-on:click="nest(element)">
+      <p> {{ element.description }} </p>
+      <button v-on:click="delete_folder(element)" class="delete">x</button>
+      </li>
+      <li id="documents_css" v-if="element.document_name">
+      <p> {{ element.document_name }} </p>
+      </li>
+    </template>
+   </ul>
+   </div>
+   <div v-else>
+   <p>ładowanie...</p></div>
+   <pre>{{ $data }}</pre>
+</div>
+</div>
+{% endraw %}
+</body>
