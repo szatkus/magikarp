@@ -24,7 +24,12 @@
       </li>
       <li id="documents_css" v-if="element.document_name">
       <p> {{ element.document_name }} </p>
+	    <button v-on:click="display_content(element)" class="display">Wyświetl zawartość</button>
       </li>
+	<div v-if=element.document_id==to_display> 
+	<div id="content_css">  {{ element.content }} </div>
+	   <button v-on:click="close_doc(folder)" button class="close_doc">Zwiń</button>
+	  </div>
     </template>
    </ul>
    </div>
@@ -35,3 +40,4 @@
 </div>
 {% endraw %}
 </body>
+
