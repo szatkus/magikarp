@@ -13,12 +13,13 @@ class Folder(db.Model):
     parent_folder_id = db.Column('PARENT_FOLDER_ID', db.Integer, nullable=False)
     description = db.Column('DESCRIPTION', db.String(50), nullable=False)
     last_updated_timestamp = db.Column('LAST_UPDATED_TIMESTAMP', db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
+   
 
 class Document(db.Model):
     __tablename__ = 'DOCUMENT'
     document_id = db.Column('DOCUMENT_ID', db.Integer, db.Sequence('document_id_seq'), primary_key=True)
     document_name = db.Column('DOCUMENT_NAME', db.String(50), nullable=False)
-    content = db.Column('CONTENT', db.String(150))
+    content = db.Column('CONTENT', db.String(1500))
     last_updated_timestamp = db.Column('LAST_UPDATED_TIMESTAMP', db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
 
 class Folder_Document_Link(db.Model):
