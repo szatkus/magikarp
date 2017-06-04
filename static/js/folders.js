@@ -5,6 +5,7 @@ window.addEventListener('load', function () {
       fetched: false,
       newFolder: "",
       currentFolder: '-1', // -1 jest traktowany jako katalog glowny
+	  to_display: '',
       data_in_json: ''
     },
     created: function () {
@@ -38,10 +39,15 @@ window.addEventListener('load', function () {
           //folders.currentFolder = folder.folder_id;
           console.log('Rozszerzono folder ', folder.description);
       },
+	  	display_content: function (folder) {
+          folders.to_display = folder.document_id;       
+      },
+	  	close_doc: function (folder) {
+          folders.to_display = '';       
+      },
       reset_current_folder: function () {
           folders.currentFolder = '-1';
       }
     }
   });
-});
-
+});	
