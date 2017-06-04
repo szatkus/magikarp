@@ -107,3 +107,24 @@ button {
   height: 35px;
   color: #555;
 }
+
+.list li .display {
+  background-color: transparent;
+  border: 1px solid #9966cc;
+  color: #ddd;
+  visibility: visible;
+  font-size: 14px;
+}
+
+.close_doc {
+  background-color: transparent;
+  padding-right: 10px;
+  color: #ddd;
+  visibility: hiden;
+  font-size: 14px;
+}
+#content_css {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 5px;
+}
